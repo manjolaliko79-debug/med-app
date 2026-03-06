@@ -1,10 +1,21 @@
-import React from 'react';
-import Layout from '../Layout';
+import React from "react";
+import Header from "@/Components/shared/dashboard/Header";
+import PatientsList from "@/Components/shared/dashboard/overview/patients/PatientsList";
 
 const PatientsPage = () => {
-  return (
-    <Layout>PatientsPage</Layout>
-  )
-}
+  const [search, setSearch] = React.useState("");
 
-export default PatientsPage
+  return (
+    <>
+      <Header
+        title="Patient Page"
+        search={search}
+        setSearch={setSearch}
+      />
+
+      <PatientsList globalFilter={search} />
+    </>
+  );
+};
+
+export default PatientsPage;

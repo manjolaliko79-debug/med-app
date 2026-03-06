@@ -1,0 +1,9 @@
+.rbc-event {
+  overflow: visible !important;
+  white-space: normal !important;
+  text-overflow: clip !important;
+}
+.rbc-month-view .rbc-event {
+  height: auto !important;
+  min-height: 30px;
+}
