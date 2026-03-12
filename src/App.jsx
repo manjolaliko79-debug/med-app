@@ -9,6 +9,8 @@ import ReportsPage from "./Pages/auth/dashboard/reports/ReportsPage";
 import StaffListPage from "./Pages/auth/dashboard/staffList/StaffListPage";
 import PurchasesPage from "./Pages/auth/dashboard/purchases/Purchases";
 import DashboardPage from "./Pages/auth/dashboard/overview/DashboardPage";
+import PatientProfilePage from "./Pages/auth/dashboard/patients/PatientProfilePage";
+
 
 
 
@@ -25,6 +27,8 @@ function App() {
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           <Route path="/appointments" element={<AppointmentsPage />} />
           <Route path="/patients" element={<PatientsPage />} />
+          <Route path="/patients/:id" element={<PatientProfilePage />} />
+
           <Route path="/staff" element={<StaffList />} />
           <Route path="/report" element={<ReportsPage />} />
           <Route path="/staff" element={<StaffListPage />} />

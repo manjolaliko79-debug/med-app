@@ -53,6 +53,7 @@ export function DataTablePagination({ table }) {
           Page {table.getState().pagination.pageIndex + 1} of{" "}
           {table.getPageCount()}
         </div>
+        
       </div>
 
       {/* Pagination buttons */}

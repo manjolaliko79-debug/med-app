@@ -2,8 +2,12 @@ import React from "react";
 import { DataTable } from "@/Components/shared/dataTable/DataTable";
 import { DataTableColumnHeader } from "@/Components/shared/dataTable/DataTableColumnHeader";
 import CreatePatientDialog from "./CreatePatientDialog";
+import  { patientColumns }  from "@/Components/shared/dataTable/PatientColumn";
+import {  useNavigate } from "react-router-dom";
+
 
 const PatientsList = ({ globalFilter }) => {
+  const navigate = useNavigate(); 
   const [patients, setPatients] = React.useState([
     {
       id: "1",
@@ -132,6 +136,7 @@ const PatientsList = ({ globalFilter }) => {
     },
   ];
 
+ 
   const handleAddPatient = (patient) => {
   const newPatient = {
     id: (patients.length + 1).toString(),
@@ -165,9 +170,12 @@ const PatientsList = ({ globalFilter }) => {
       {/* Table */}
       <div className="px-4">
         <DataTable
-          columns={columns}
+          columns={patientColumns}
           data={patients}
           globalFilter={globalFilter}
+          onRowClick={(patient) => {
+          navigate(`/patients/${patient.id}`)
+  }}
         />
       </div>
     </div>

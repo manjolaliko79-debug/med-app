@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 
 const Header = ({ title, subtitle, children, search, setSearch }) => {
   return (
-    <div className="flex items-center justify-between p-4">
+    <div className="h-16 bg-white border-b sticky top-0 z-10 flex items-center justify-between p-4">
       
       {/* Left Section */}
       <div className="flex items-center justify-content gap-4">

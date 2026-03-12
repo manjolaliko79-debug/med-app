@@ -25,7 +25,7 @@ import {
 import { Input } from '@/components/ui/input';
 
 
-export function DataTable1({ columns, data, globalFilter }) {
+export function DataTable1({ columns, data, globalFilter, onRowClick }) {
   const [sorting, setSorting] = React.useState([]);
   const [columnFilters, setColumnFilters] = React.useState([]);
   const [columnVisibility, setColumnVisibility] = React.useState({});
@@ -77,7 +77,12 @@ export function DataTable1({ columns, data, globalFilter }) {
           <TableBody>
             {table.getRowModel().rows.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
+                <TableRow
+                    key={row.id}
+                      data-state={row.getIsSelected() && "selected"}
+                        className="cursor-pointer hover:bg-muted/50 transition-colors"
+                          onClick={() => onRowClick?.(row.original)}
+                                >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
